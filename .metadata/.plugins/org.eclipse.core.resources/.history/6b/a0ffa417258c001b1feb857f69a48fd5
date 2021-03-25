@@ -1,0 +1,21 @@
+package com.cidenet.prueba.service;
+
+import java.util.List;
+
+import com.cidenet.prueba.modelo.Area;
+
+public class AreaServiceImpl implements AreaServiceDecl{
+
+	@Override
+	public List<Area> getAllArea() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Area findById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

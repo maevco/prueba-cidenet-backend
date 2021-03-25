@@ -1,0 +1,40 @@
+package com.cidenet.prueba.service;
+
+
+@Service
+public class EmpleadoServiceImpl implements EmpleadoServiceDecl {
+
+	@Autowired
+	EmpleadoRepository empleadoRepository;
+
+	@Override
+	public List<Empleado> getAllEmpleados() {
+		return empleadoRepository.findAll();
+	}
+
+	@Override
+	public Empleado findById(long id) {
+		return empleadoRepository.findById(id);
+	}
+
+	@Override
+	public Empleado add(Empleado empleado) {
+		return empleadoRepository.save(empleado);
+	}
+
+	@Override
+	public Empleado edit(Empleado empleado) {
+		return empleadoRepository.save(empleado);
+	}
+
+	@Override
+	public Empleado delete(long id) {
+		Empleado empleado = empleadoRepository.findById(id);
+
+		if (empleado != null) {
+			empleadoRepository.delete(empleado);
+		}
+		return empleado;
+	}
+
+}

@@ -1,0 +1,18 @@
+package com.cidenet.prueba.repository;
+
+public interface PaisRepository extends JpaRepository<Pais, Long> {
+
+	/**
+	 * 
+	 * @return
+	 */
+	public List<Pais> findAll();
+
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public Pais findById(long id);
+
+}

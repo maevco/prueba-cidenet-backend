@@ -1,0 +1,86 @@
+package com.cidenet.prueba.modelo;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.sun.istack.NotNull;
+
+@Entity
+@Table(name = "empleado", schema = "cidenet")
+public class Empleado {
+
+	private Long id;
+	private String primerApellido;
+	private String segundoApellido;
+	private String primerNombre;
+	private String otrosNombres;
+	private String numeroIdentificacion;
+
+	@Id
+	@Column(name = "id", nullable = false, unique = true)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	@NotNull(message = "El primer apellido no puede ser Nulo")
+	@Size(max = 20, message = "El  primer apellido debe tener maximo 20 caracteres")
+	@Column(name = "primer_apellido")
+	public String getPrimerApellido() {
+		return primerApellido;
+	}
+
+	public void setPrimerApellido(String primerApellido) {
+		this.primerApellido = primerApellido;
+	}
+
+	@NotNull(message = "El segundo apellido no puede ser Nulo")
+	@Size(max = 20, message = "El  segundo apellido debe tener maximo 20 caracteres")
+	@Column(name = "segundo_apellido")
+	public String getSegundoApellido() {
+		return segundoApellido;
+	}
+
+	public void setSegundoApellido(String segundoApellido) {
+		this.segundoApellido = segundoApellido;
+	}
+
+	@NotNull(message = "El primer nombre no puede ser Nulo")
+	@Size(max = 20, message = "El  primer nombre debe tener maximo 20 caracteres")
+	@Column(name = "primer_nombre")
+	public String getPrimerNombre() {
+		return primerNombre;
+	}
+
+	public void setPrimerNombre(String primerNombre) {
+		this.primerNombre = primerNombre;
+	}
+
+	@Size(max = 50, message = "Otros nombre debe tener maximo 50 caracteres")
+	@Column(name = "otros_nombres")
+	public String getOtrosNombres() {
+		return otrosNombres;
+	}
+
+	public void setOtrosNombres(String otrosNombres) {
+		this.otrosNombres = otrosNombres;
+	}
+
+	@Column(name = "numero_identificacion")
+	public String getNumeroIdentificacion() {
+		return numeroIdentificacion;
+	}
+
+	public void setNumeroIdentificacion(String numeroIdentificacion) {
+		this.numeroIdentificacion = numeroIdentificacion;
+	}
+
+}

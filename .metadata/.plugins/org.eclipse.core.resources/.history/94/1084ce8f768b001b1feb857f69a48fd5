@@ -1,0 +1,5 @@
+package com.cidenet.prueba.service;
+
+public interface PaisServiceDecl {
+
+}

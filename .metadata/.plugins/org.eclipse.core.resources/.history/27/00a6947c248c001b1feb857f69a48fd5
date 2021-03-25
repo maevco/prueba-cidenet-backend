@@ -1,0 +1,8 @@
+package com.cidenet.prueba.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class TipoIdentificacionServiceImpl implements TipoIdentificacionServiceDecl{
+
+}

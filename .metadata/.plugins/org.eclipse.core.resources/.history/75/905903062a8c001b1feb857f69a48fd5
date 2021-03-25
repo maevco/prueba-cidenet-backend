@@ -1,0 +1,109 @@
+package com.cidenet.prueba.modelo;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "empleado", schema = "cidenet")
+public class Empleado {
+
+	private Long id;
+	private String primerApellido;
+	private String segundoApellido;
+	private String primerNombre;
+	private String otrosNombres;
+	private String numeroIdentificacion;
+	private Pais pais;
+	private TipoIdentificacion tipoIdentificacion;
+	private Area area;
+
+	@Id
+	@Column(name = "id", nullable = false, unique = true)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	@Column(name = "primer_apellido")
+	public String getPrimerApellido() {
+		return primerApellido;
+	}
+
+	public void setPrimerApellido(String primerApellido) {
+		this.primerApellido = primerApellido;
+	}
+
+	@Column(name = "segundo_apellido")
+	public String getSegundoApellido() {
+		return segundoApellido;
+	}
+
+	public void setSegundoApellido(String segundoApellido) {
+		this.segundoApellido = segundoApellido;
+	}
+
+	@Column(name = "primer_nombre")
+	public String getPrimerNombre() {
+		return primerNombre;
+	}
+
+	public void setPrimerNombre(String primerNombre) {
+		this.primerNombre = primerNombre;
+	}
+
+	@Column(name = "otros_nombres")
+	public String getOtrosNombres() {
+		return otrosNombres;
+	}
+
+	public void setOtrosNombres(String otrosNombres) {
+		this.otrosNombres = otrosNombres;
+	}
+
+	@Column(name = "numero_identificacion")
+	public String getNumeroIdentificacion() {
+		return numeroIdentificacion;
+	}
+
+	public void setNumeroIdentificacion(String numeroIdentificacion) {
+		this.numeroIdentificacion = numeroIdentificacion;
+	}
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "pais_id")
+	public Pais getPais() {
+		return pais;
+	}
+
+	public void setPais(Pais pais) {
+		this.pais = pais;
+	}
+
+	public TipoIdentificacion getTipoIdentificacion() {
+		return tipoIdentificacion;
+	}
+
+	public void setTipoIdentificacion(TipoIdentificacion tipoIdentificacion) {
+		this.tipoIdentificacion = tipoIdentificacion;
+	}
+
+	public Area getArea() {
+		return area;
+	}
+
+	public void setArea(Area area) {
+		this.area = area;
+	}
+
+}

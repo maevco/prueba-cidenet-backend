@@ -1,0 +1,10 @@
+package com.cidenet.prueba.modelo;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "area", schema = "cidenet")
+public class Area {
+
+}

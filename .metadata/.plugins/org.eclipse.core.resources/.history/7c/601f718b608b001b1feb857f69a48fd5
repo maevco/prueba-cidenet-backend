@@ -1,0 +1,31 @@
+package com.cidenet.prueba.repository;
+public interface EmpleadoRepository extends JpaRepository<Empleado, Long> {
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public List<Empleado> findAll();
+
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public Empleado findById(long id);
+
+	/**
+	 * 
+	 * @param persona
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public Empleado save(Empleado empleado);
+
+	/**
+	 * 
+	 * @param id
+	 */
+	public void delete(Empleado empleado);
+
+}

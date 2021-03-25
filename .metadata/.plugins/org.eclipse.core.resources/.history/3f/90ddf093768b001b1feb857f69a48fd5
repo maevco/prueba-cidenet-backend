@@ -1,0 +1,17 @@
+package com.cidenet.prueba.service;
+
+public interface PaisServiceDecl {
+
+	/**
+	 * 
+	 * @return
+	 */
+	public List<Pais> getAllPais();
+
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public Pais findById(long id);
+}
